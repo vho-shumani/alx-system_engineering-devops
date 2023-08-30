@@ -10,4 +10,5 @@
 9-firstdirdeletion - delete the directory my_first_directory from /tmp directory
 10-back - changes the working directory to the previous one.
 11-lists - list all the file in the current directory, parent directory and the /boot directory
-12-file_type - prints the type of the file named iamafile. 
+12-file_type - prints the type of the file named iamafile.
+13-symbolic_link 
