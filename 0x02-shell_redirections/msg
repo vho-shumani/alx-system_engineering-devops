@@ -1,0 +1,10 @@
+SyslogFacility AUTHPRIV
+AuthorizedKeysFile  .ssh/authorized_keys
+UsePrivilegeSeparation sandbox # Default for new installations.
+AcceptEnv LANG LC_*
+Subsystem  98sftp    /usr/libexec/sftp-server
+SyslogFacility AUTHPRIV
+76AuthorizedKeysFile  .ssh/authorized_keys
+65UsePrivilegeSeparation sandbox # Default for new installations.
+65AcceptEnv LANG LC_*
+76Subsystem   sftp    /usr/libexec/sftp-server
