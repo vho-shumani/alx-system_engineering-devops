@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# displays numbers from 1 to 100, how ever display fizzbuzz for multiple of 3 and 5, Fizz for mustiple of 3, Buzz for multiple of 5.
+for i in {1..100}
+do
+    if [ $((i%3)) -eq 0 ] && [ $((i%5)) -eq 0 ]; then echo "FizzBuzz";
+    elif [ $((i%3)) -eq 0 ]; then echo "Fizz"; 
+    elif [ $((i%5)) -eq 0 ]; then echo "Buzz";
+    else echo "$i"; fi 
+done
