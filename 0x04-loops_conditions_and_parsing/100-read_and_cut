@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# display the contents of the file /etc/passwd.
+while read -r file
+do 
+    echo "$file"
+done < /etc/passwd
