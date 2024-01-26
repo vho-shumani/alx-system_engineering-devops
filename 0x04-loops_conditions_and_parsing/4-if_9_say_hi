@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#display Best School 10 times
+#display Best School 9 times, and Hi on the 9th time
 i=0
 while [ $i -ne 10 ]
 do 
