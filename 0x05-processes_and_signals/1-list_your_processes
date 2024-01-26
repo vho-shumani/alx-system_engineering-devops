@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#displays all process on the system using BSD syntax.
+ps -axu
