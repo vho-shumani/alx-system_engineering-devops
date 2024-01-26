@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #stops a process
-process="4-to_infinity_and_beyond"
-pid=$(pgrep "$process")
+pid=$(pgrep -f 4-to_infinity_and_beyond)
 
 kill "$pid"
