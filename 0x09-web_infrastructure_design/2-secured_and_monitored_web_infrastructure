@@ -1,0 +1,33 @@
+Specifics about this infrastructure:
+
+For every additional element, why you are adding it:
+-Firewalls and SSL Certificate are added into, inorder to improve the security.
+-The firewall will controll the incoming or outcoming traffic and preventing unauthorised access from the internet to the servers.
+-The SSL certificate will enable for the HTTPS encrypted data transmitting between the user and the server, protecting sensitive data from being exposed.
+-The monitoring clients, will collect various performance data from the servers, to help ensure the availability, performance and security of the infrastructure.
+
+What are firewalls for?
+-Control the incoming and outcoming inoder, acting as a barrier between ther server and the internet, preventing unauthorised access.
+
+Why is the traffic served over HTTPS?
+- HTTPS encrypts data transmitted between clients and the server, protecting it from interception from hackers.
+
+What monitoring is used for?
+- Monitoring is used to track the performance, availability, and security of the infrastructure in real-time.
+
+How the monitoring tool is collecting data?
+-Monitoring is done by collecting data from running softwares, CPU, memory or disk ensuring that they are operating as expected.
+
+what to do if you want to monitor your web server QPS?
+-Using monitoring tool that will track the metrics related to incoming requests inorder to assess the servers workload. By analyzing these metrics, you can identify patterns, trends, and anomalies in the web server's workload and performance.
+
+Issues with the Infrastructure:
+Why terminating SSL at the load balancer level is an issue?
+-This will potentially compromise sensitive data within the internal network.
+
+Why having only one MySQL server capable of accepting writes is an issue?
+-If the server goes down or fails to store data this may result to loss of data or even downtime. 
+
+Why having servers with all the same components (database, web server and application server) might be a problem?
+-It increase the risk our having a single vulnerability affecting all of the servers.
+

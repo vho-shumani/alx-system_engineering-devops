@@ -1,0 +1,3 @@
+Specifics about this infrastructure:
+-Spliting components ensures individual scaling and maintenance of diffent layers based on the demand, whithout affecting all the components.
+-Adding another load balancer HAproxy configured as cluster provides redundancy and high availability. If one fails, the other will ensure uninterrupted service.

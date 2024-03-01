@@ -1,0 +1,31 @@
+Specifics about this infrastructure:
+What is a server?
+-It is a computer system that provides resourses and funtionality to other computers in a network.
+
+What is the role of the domain name?
+-It provides a address for a website in simple human-readable text form.
+
+What type of DNS record www is in www.foobar.com?
+-The CNANE (canonical) DNS record.
+
+What is the role of the web server?
+-It accepts http request from the browser and send back web contents via the http protocol.
+
+What is the role of the application server?
+-it accepts dynamic requests from the webserver, updates the the hosted file and interacts with the database inorder to send dynamic content to the browser.
+
+What is the role of the database?
+-It store and maintain data, provide access to the application server inorder to respond to a dynamic request from the browser.
+
+What is the server using to communicate with the computer of the user requesting the website.
+The http protocol.
+
+The issues are with this infrastructure:
+Single point of failure(SPOF)
+- Given that the is only one server available, this could lead to the website becoming unavailable if the server is to be down.
+
+Downtime when maintenance needed:
+-During the maintenance period the website will be unavailble as the server will be down.
+
+Scalability:
+-Given that there is one server available this will limit the amout of traffic the server would be able to handle, and will result to a slow performance of the website or may be unresponsive.

@@ -1,0 +1,29 @@
+Specifics about this infrastructure:
+why added a load-balancer and another server?
+-The addition of a server, helps deal with high volume of traffic and prevents the website from operating slowly or becoming unresponsive. And if one of the server are to be down the website will still be available even during downtime and maintanence.
+-The Load balance will assist with directing traffic between the server in a way which cause more load on either of the server.
+
+What distribution algorithm your load balancer is configured with and how it works?
+Round-robin distrunution algorithm:
+It will distribute requests evenly to all the servers, it will send requests to a server one after another in a row, and one it reaches the last server it will repeat again.
+
+Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both?
+-It will us a active active setup.
+-The active-active setup, all of the server will be handling requests at the same time, while with the active-passive setup only one server will be operating while the rest are on standby.
+
+How a database Primary-Replica (Master-Slave) cluster works?
+The primary(master) node will accept write operations/queries, such as the INSERT, UPDATE, and DELETE queries. The data changes on the primary node will be then replicated onto the replica(slave) node, which will only accept read operations such as SELECT.This will improve performance and provide data redundancy. 
+
+What is the difference between the Primary node and the Replica node in regard to the application?
+-The primary node handles the write requests, such as INSERT, UPDATE and DELETE. Whereas the replica node will only handle read-only requests.
+
+Issues with this infrastructure:
+Single point of failure:
+-The load balance has a potential of becoming a SPOF, in the case that it goes down disrupting the distribution of requests.
+
+Security issues (no firewall, no HTTPS):
+-Not having any firewalls will leave the servers opened to unauthorised access, opening them to attacks.
+-Additional, no HTTPS encryption will expose sensitive data being transfered with the browser and servers.
+
+No Monitoring:
+Not having any monitoring tools, will provide challenges with detecting performance issues or pontential security threats with the website. Resulting in a less reliable web infrastructure. 
