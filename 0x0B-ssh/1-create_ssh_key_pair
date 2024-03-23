@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N betty 
+#creates an RSA key pair, 40096 number of bits, ~/.ssg/school file name, passphrase betty
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N betty
