@@ -1,2 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bashi
+# cnnect to server using the private key ~/.ssh/school.
 cat ~/.ssh/school | ssh ubuntu@localhost
