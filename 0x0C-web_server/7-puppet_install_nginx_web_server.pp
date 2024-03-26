@@ -4,25 +4,25 @@ exec { 'update system':
 }
 
 package { 'nginx':
-	ensure => 'installed',
-	require => Exec['update system']
+  ensure  => 'installed',
+  require => Exec['update system']
 }
 
 file {'/var/www/html/index.html':
-	content => 'Hello World!'
+  content => 'Hello World!'
 }
 
 nginx::resource { 'redirect':
     location => '/redirect_me',
     rewrite  => {
-      source   => '^/redirect_me$',
+      source      => '^/redirect_me$',
       destination => 'https://www.youtube.com/watch?v=QH2-TGUlwu4',
-      permanent => true,
+      permanent   => true,
     }
-    require => Package['nginx']
+    require  => Package['nginx']
   }
 
 service {'nginx':
-	ensure => running,
-	require => Package['nginx']
+  ensure  => running,
+  require => Package['nginx']
 }
