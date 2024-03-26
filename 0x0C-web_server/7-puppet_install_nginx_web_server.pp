@@ -1,21 +1,17 @@
-ass for Nginx configuration
+#install and configure nginx
 class nginx {
 
-  # Include the Nginx module (assuming it's installed and configured)
   include puppet::nginx
 
-  # Package resource to install Nginx
   package { 'nginx':
     ensure => installed,
     require => Exec['update system'],
   }
 
-  # Update package lists
   Exec['update system'] {
     command => '/usr/bin/apt-get update',
   }
 
-  # Default server configuration
   nginx::vhost { 'default':
     ensure        => present,
     listen_port   => 80,
@@ -35,7 +31,6 @@ class nginx {
 EOF
   }
 
-  # Redirect configuration for /redirect_me (using Nginx module)
   nginx::resource { 'redirect':
     location => '/redirect_me',
     rewrite  => {
@@ -46,7 +41,6 @@ EOF
     require => Package['nginx']
   }
 
-  # Service resource to manage Nginx
   service { 'nginx':
     ensure => running,
     enable => true,
