@@ -7,7 +7,7 @@ info_subdomain(){
 	echo "The subdomain $2 is a $record_type record and points to $destination"
 }
 
-if [ -z $2 ]; then
+if [ "$#" -ne 2 ]; then
 	subdomains=("www" "lb-01" "web-01" "web-02")
 	for subdomain in ${subdomains[@]}; do
 		info_subdomain "$1" "$subdomain"
