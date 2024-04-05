@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# display information about subdomains.
+
+info_subdomain(){
+	record_type=$(dig "$2"."$1" +noall +answer | awk '{print $4}')
+	destination=$(dig "$2"."$1" +noall +answer | awk '{print $5}')	
+	echo "The subdomain $2 is a $record_type record and points to $destination"
+}
+
+if [ -z $2 ]; then
+	subdomains=("www" "lb-01" "web-01" "web-02")
+	for subdomain in ${subdomains[@]}; do
+		info_subdomain "$1" "$subdomain"
+	done
+else
+	info_subdomain "$1" "$2"
+fi	
