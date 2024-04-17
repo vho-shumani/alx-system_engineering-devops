@@ -1,0 +1,11 @@
+#!/bin/bash
+#generates a MySQL dump and creates a compressed archive out of it.
+
+MYSQL_USER="root"
+MYSQL_PASSWORD="$1"
+DATE_FORMAT=$(date +"%d-%m-%Y")
+BACKUP_FILE="backup.sql"
+
+mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD --all-databases > $BACKUP_FILE
+
+tar -czvf $DATE_FORMAT.tar.gz $BACKUP_FILE
