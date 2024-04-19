@@ -2,5 +2,4 @@
 #configures the container, iorder for nginx to be listening on all active IPs on port 8080, and running as nginx user.
 sed -i 's/^user .*;$/user nginx;/' /etc/nginx/nginx.conf
 sed -i 's/^listen .*;$/listen 8080;/' /etc/nginx/sites-available/default
-service nginx start be listening on all active IPs on port 8080
-
+sudo -u nginx service nginx restart
