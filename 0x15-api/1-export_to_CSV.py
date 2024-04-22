@@ -23,7 +23,7 @@ if __name__ == "__main__":
 #        if todo['completed']:
 #            print(f"\t {todo['title']}")
     with open(f"{employee_id}.csv", 'w') as f:
-        csv_writer = csv.writer(f)
+        csv_writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for todo in todo_list.json():
             csv_writer.writerow(
                         [
