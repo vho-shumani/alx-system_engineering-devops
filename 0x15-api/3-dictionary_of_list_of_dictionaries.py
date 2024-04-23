@@ -18,8 +18,8 @@ if __name__ == "__main__":
         value = [
                 {
                     "username": employee['username'],
-                    "task": todo['title'],
-                    "completed": todo['completed'],
+                    "task": i['title'],
+                    "completed": i['completed'],
                 } for i in todo_list.json() if i['userId'] == employee['id']
                 ]
         tasks[employee['id']] = value
