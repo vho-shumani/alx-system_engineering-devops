@@ -20,7 +20,7 @@ if __name__ == "__main__":
                     "username": employee['username'],
                     "task": todo['title'],
                     "completed": todo['completed'],
-                } for todo in todo_list.json() if todo['userId'] == employee['id']
+                } for i in todo_list.json() if i['userId'] == employee['id']
                 ]
         tasks[employee['id']] = value
     with open("todo_all_employees.json", 'w') as f:
