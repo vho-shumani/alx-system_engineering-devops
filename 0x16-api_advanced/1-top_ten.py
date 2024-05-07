@@ -6,8 +6,9 @@ import requests
 
 def top_ten(subreddit):
     title_list = []
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"}
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=9'
-    response = requests.get(url, allow_redirects=False)
+    response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code == 200:
         for data in response.json()['data']['children']:
                 print(data['data']['title'])
