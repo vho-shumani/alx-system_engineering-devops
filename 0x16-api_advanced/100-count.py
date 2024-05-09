@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""queries the Reddit API, parses the title of all hot articles, and prints a sorted count of given keywords"""
+"""queries the Reddit API, parses the title of
+all hot articles, and prints a sorted count of given keywords"""
 import requests
 import re
+
 
 def count_words(subreddit, word_list, after=None, counter={}):
     if after is None and counter:
@@ -30,4 +32,3 @@ def count_words(subreddit, word_list, after=None, counter={}):
     after = data["data"]["after"]
     if after:
         count_words(subreddit, word_list, after, counter)
-count_words("learnprogramming", ["java", "javascript", "python"])
